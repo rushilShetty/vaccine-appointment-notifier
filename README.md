@@ -18,26 +18,26 @@ This is obviously time-consuming. Hence I wrote this script which checks between
 - Create a config.py file with the following variables and your own values.
 - Create a cron job to run the script.
 
-### config.py
+### config.py example
 
 ```python
-# These values have be to extracted from laatejevaccineren.be/registratie
-uniqueId = ""
-afspraakId = ""
+# These GUID values have be to extracted from laatejevaccineren.be/registratie
+uniqueId = "someUniqueGUID"
+afspraakId = "someUniqueGUID"
 
 # The dates for which you would like to know available timeslots.
 afspraakTot = "2021-07-18"
 dateList = ["2021-07-13","2021-07-14","2021-07-15","2021-07-16","2021-07-17","2021-07-18"]
 
 # Twilio account SID and auth token
-twilioAuthSId = ""
-twilioAuthToken = ""
+twilioAuthSId = "someUniqueSID"
+twilioAuthToken = "someAuthToken"
 
 # Phone numbers to send the SMS from and to
-fromNumber = ""
-toNumber = ""
+fromNumber = "+1xxxxxxxxx8"
+toNumber = "+3247xxxxxx1"
 
 # Log file path to write logs after every run
-logFilePath = ""
+logFilePath = "/home/mymachine/vaccine.log"
 ```
 
