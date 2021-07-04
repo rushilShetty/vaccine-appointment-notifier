@@ -13,18 +13,13 @@ headers = {
   'DNT': '1'
 }
 
-# Constants
-afspraakTot = "2021-07-18"
-
-# Today's date
 today = datetime.today().strftime('%Y-%m-%d')
 afspraakVanaf = today
-dateList = ["2021-07-13","2021-07-14","2021-07-15","2021-07-16","2021-07-17","2021-07-18"]
 availableDates = []
 
-for eachDate in dateList:
+for eachDate in config.dateList:
   httpQuery = "/api/public/praktijk/{}/afspraakmogelijkheden?afspraakTot={}&afspraakTypeIds={}&afspraakVanaf={}&dagTot={}&dagVan={}". \
-                  format(config.uniqueId, afspraakTot, config.afspraakId, afspraakVanaf, eachDate, eachDate)
+                  format(config.uniqueId, config.afspraakTot, config.afspraakId, afspraakVanaf, eachDate, eachDate)
   conn.request("GET", httpQuery, payload, headers)
   res = conn.getresponse()
   parsed = json.loads(res.read())
